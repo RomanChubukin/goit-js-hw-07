@@ -25,7 +25,7 @@ list.addEventListener("click", onClick)
 
 function onClick(event) { 
     event.preventDefault()
-    console.dir(event.target)
+    if (!event.target.classList.contains("gallery__image")) { return}
     const instance = basicLightbox.create(`
     <div class="modal">
         <img src="${event.target.dataset.source}">
@@ -35,8 +35,7 @@ function onClick(event) {
     instance.show()
     document.addEventListener("keydown", closeModal)
     function closeModal(evt) {
-    console.log(evt);
-    if (evt.code === "Escape") { 
+        if (evt.code === "Escape") { 
         instance.close();
         document.removeEventListener("keydown",closeModal)
     }
