@@ -19,9 +19,7 @@ list.addEventListener("click", onClick);
 
 function onClick(evt) { 
     evt.preventDefault();
-    
-    const lightbox = new SimpleLightbox('.gallery a');
+    }
+const lightbox = new SimpleLightbox('.gallery a');
     lightbox.options.captionsData = "alt";
     lightbox.options.captionDelay = 250;
-    console.log(lightbox.options.captionsData)
-}
